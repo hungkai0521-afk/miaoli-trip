@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#2b3447">
+<title>苑裡 × 白沙屯 三天兩夜</title>
+<meta name="description" content="苑裡、白沙屯三天兩夜:客家美食、伴手禮、白沙屯媽祖、飛牛牧場、包棟火鍋。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&display=swap">
+<style>
+/* Hallmark · macrostructure: Narrative Workflow (Day 1 → 2 → 3 stages) · genre: editorial (warm, travel) · theme: custom (vibe: 藺草米黃 · 海線藍 · 媽祖廟紅)
+ * axes: light / display-handwritten (LXGW WenKai TC + system sans) / warm-coastal
+ * nav: N5 floating pill (horizontal scroll) · footer: Ft5 statement + photo credits · enrichment: real photography (Wikimedia Commons, licensed)
+ * motion: press-tick only (reduced-motion gated)
+ * contrast: pass (40–41) · tokens: pass (48) · honest: pass (46) · chrome: pass (47) · mobile: pass (34, 49–52)
+ * pre-emit critique: P4 H4 E4 S4 R5 V5 */
+:root{
+  /* colour — every value on the page references one of these */
+  --paper:oklch(97% 0.013 85);
+  --paper-2:oklch(94% 0.02 85);
+  --card:oklch(99.2% 0.006 85);
+  --ink:oklch(26% 0.035 255);
+  --ink-2:oklch(38% 0.03 255);
+  --ink-3:oklch(47% 0.025 255);
+  --accent:oklch(50% 0.17 28);
+  --accent-soft:oklch(94% 0.035 28);
+  --on-accent:oklch(98.5% 0.01 85);
+  --sea:oklch(45% 0.08 215);
+  --sea-soft:oklch(94% 0.025 215);
+  --gold:oklch(80% 0.12 82);
+  --rule:oklch(87% 0.02 85);
+  --rule-2:oklch(80% 0.03 85);
+  --warn-bg:oklch(95.5% 0.04 80);
+  --warn-line:oklch(84% 0.08 80);
+  --warn-ink:oklch(40% 0.08 60);
+  --focus:oklch(26% 0.035 255);
+  --scrim:oklch(18% 0.03 255 / 0.82);
+  --scrim-0:oklch(18% 0.03 255 / 0);
+  --shadow:oklch(26% 0.035 255 / 0.10);
+  /* type */
+  --font-display:"LXGW WenKai TC","Kaiti TC","BiauKai","Noto Serif TC",serif;
+  --font-body:-apple-system,system-ui,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  /* space + shape */
+  --r:16px; --r-sm:10px;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+  --dur-micro:120ms;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.75;overflow-x:clip}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,label:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important}
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--font-display);font-style:normal;font-weight:700;overflow-wrap:anywhere;min-width:0}
+
+/* ── Hero ── */
+.hero{position:relative;min-height:min(82svh,660px);display:flex;align-items:flex-end;color:var(--on-accent);overflow:hidden;background:var(--ink)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,var(--scrim) 0%,var(--scrim) 26%,var(--scrim-0) 72%)}
+.hero .in{position:relative;z-index:1;width:100%;max-width:760px;margin:0 auto;padding:0 16px calc(env(safe-area-inset-bottom) + 36px)}
+.eyebrow{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.18em;border-left:3px solid var(--gold);padding-left:10px}
+.hero h1{font-size:clamp(2.4rem,9vw,3.6rem);line-height:1.12;margin:12px 0 10px;letter-spacing:.04em}
+.hero .sub{font-size:1rem;font-weight:600;max-width:34rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-size:.82rem;font-weight:700;padding:6px 14px;border-radius:999px;border:1px solid var(--on-accent);white-space:nowrap}
+.chip.solid{background:var(--accent);border-color:var(--accent)}
+
+/* ── Nav ── */
+.nav{position:sticky;top:0;z-index:50;display:flex;gap:4px;overflow-x:auto;padding:10px 12px;background:var(--paper);border-bottom:1px solid var(--rule);scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex:none;text-decoration:none;font-size:.86rem;font-weight:800;color:var(--ink-3);padding:9px 14px;border-radius:999px;white-space:nowrap;transition:transform var(--dur-micro) var(--ease-out)}
+.nav a.on{background:var(--ink);color:var(--on-accent)}
+.nav a:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.nav a:hover:not(.on){background:var(--paper-2);color:var(--ink)}}
+
+/* ── Stage index ── */
+.index{padding:32px 0 8px}
+.index h2{font-size:1.5rem;margin-bottom:6px}
+.index p.lead{color:var(--ink-2);font-size:.95rem}
+.steps{list-style:none;margin-top:18px;border-top:2px solid var(--ink)}
+.steps a{display:grid;grid-template-columns:3.4rem minmax(0,1fr);gap:12px;align-items:baseline;padding:14px 4px;border-bottom:1px solid var(--rule);text-decoration:none}
+.steps .n{font-family:var(--font-display);font-size:1.9rem;line-height:1;color:var(--accent)}
+.steps b{display:block;font-size:1.02rem}
+.steps span{font-size:.86rem;color:var(--ink-3)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.fact{background:var(--card);border:1px solid var(--rule);border-radius:var(--r-sm);padding:12px 14px}
+.fact small{display:block;font-size:.76rem;font-weight:800;color:var(--sea);letter-spacing:.08em}
+.fact b{font-size:.95rem}
+
+/* ── Stage (Narrative Workflow) ── */
+.stage{padding:44px 0 8px;scroll-margin-top:56px}
+.stage-rule{border-top:6px solid var(--ink);padding-top:14px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:end}
+.stage-no{font-family:var(--font-display);font-size:clamp(3.6rem,15vw,5.4rem);line-height:.85;color:var(--accent)}
+.stage-day{font-size:.8rem;font-weight:800;letter-spacing:.2em;color:var(--sea)}
+.stage h2{font-size:clamp(1.45rem,5.4vw,1.9rem);line-height:1.25}
+.stage .theme{margin-top:10px;font-size:.95rem;color:var(--ink-2)}
+.stage .theme b{color:var(--ink)}
+
+figure{margin:20px 0;background:var(--card);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+figure img{width:100%;aspect-ratio:3/2;object-fit:cover}
+figure.tall img{aspect-ratio:4/3}
+figcaption{font-size:.78rem;color:var(--ink-3);padding:8px 14px}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px 0}
+.pair figure{margin:0}
+.pair figure img{aspect-ratio:1/1}
+
+/* timeline */
+.period{display:flex;align-items:center;gap:10px;margin:26px 0 6px;font-size:.82rem;font-weight:800;color:var(--sea);letter-spacing:.1em}
+.period::after{content:"";flex:1;height:1px;background:var(--rule-2)}
+.slot{display:grid;grid-template-columns:6.6rem minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px dashed var(--rule)}
+.slot:last-child{border-bottom:none}
+.slot .t{font-variant-numeric:tabular-nums;font-weight:800;font-size:.88rem;color:var(--accent);padding-top:2px}
+.slot h3{font-size:1.14rem;line-height:1.4}
+.slot p{font-size:.92rem;color:var(--ink-2);margin-top:4px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.lk{display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:999px;font-size:.84rem;font-weight:800;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--rule-2);white-space:nowrap;transition:transform var(--dur-micro) var(--ease-out)}
+.lk:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.lk:hover{border-color:var(--ink)}}
+@media (max-width:380px){
+  .slot{grid-template-columns:minmax(0,1fr);gap:2px}
+}
+
+/* sub schedule (飛牛) */
+.sched{list-style:none;margin-top:10px;background:var(--sea-soft);border-radius:var(--r-sm);padding:6px 14px}
+.sched li{display:grid;grid-template-columns:3.6rem minmax(0,1fr);gap:10px;padding:8px 0;border-bottom:1px solid var(--card);font-size:.9rem}
+.sched li:last-child{border-bottom:none}
+.sched .h{font-weight:800;color:var(--sea);font-variant-numeric:tabular-nums}
+
+.note{margin-top:12px;font-size:.86rem;line-height:1.7;background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink);border-radius:var(--r-sm);padding:10px 14px}
+.note b{color:var(--ink)}
+
+/* checklists */
+.lists{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:var(--r);padding:14px 16px}
+.box h4{font-family:var(--font-display);font-size:1.05rem;margin-bottom:6px}
+.check{list-style:none}
+.check li{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed var(--rule);font-size:.9rem}
+.check li:last-child{border-bottom:none}
+.check input{flex:none;width:20px;height:20px;margin-top:3px;accent-color:var(--accent);cursor:pointer}
+.check label{cursor:pointer;min-width:0}
+.check input:checked + label{color:var(--ink-3);text-decoration:line-through}
+@media (max-width:560px){.lists{grid-template-columns:minmax(0,1fr)}}
+
+/* prep */
+.prep{padding:44px 0 8px;scroll-margin-top:56px}
+.prep .box{margin-top:14px}
+.prep h2{font-size:1.5rem}
+.reset{margin-top:12px;min-height:40px;padding:8px 16px;border-radius:999px;border:1px solid var(--rule-2);background:var(--card);color:var(--ink-2);font:inherit;font-size:.84rem;font-weight:800;cursor:pointer}
+
+/* footer */
+.foot{margin-top:48px;background:var(--ink);color:var(--on-accent);padding:40px 0 calc(env(safe-area-inset-bottom) + 40px)}
+.foot .bye{font-family:var(--font-display);font-size:clamp(1.3rem,5vw,1.7rem);line-height:1.5}
+.foot .credits{margin-top:24px;font-size:.74rem;line-height:1.9;opacity:.85}
+.foot .credits a{text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="img/temple.jpg" width="1400" height="1158" alt="白沙屯拱天宮正面的燕尾屋脊與彩色剪黏" fetchpriority="high">
+  <div class="in">
+    <span class="eyebrow">苗栗海線 · 三天兩夜</span>
+    <h1>苑裡 × 白沙屯</h1>
+    <p class="sub">客家美食、伴手禮、白沙屯媽祖、飛牛牧場,晚上回包棟民宿煮火鍋。</p>
+    <div class="chips">
+      <span class="chip solid">Day 1 – Day 3</span>
+      <span class="chip">🏡 汐X光包棟民宿</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav" id="nav" aria-label="頁面導覽">
+  <a href="#index">總覽</a>
+  <a href="#d1">Day 1</a>
+  <a href="#d2">Day 2</a>
+  <a href="#d3">Day 3</a>
+  <a href="#prep">行前清單</a>
+</nav>
+
+<main class="wrap">
+
+<section class="index" id="index">
+  <h2>三天,三段路</h2>
+  <p class="lead">第一天買齊食材回民宿煮火鍋,第二天拜媽祖、逛牧場、吃海鮮,第三天睡飽吃完午餐再回家。</p>
+  <ol class="steps">
+    <li><a href="#d1"><span class="n">01</span><div><b>三義美食 → 伴手禮 → 民宿火鍋</b><span>客家土雞麵、垂坤、全聯採買、火鍋派對</span></div></a></li>
+    <li><a href="#d2"><span class="n">02</span><div><b>白沙屯媽祖 → 飛牛牧場 → 苑裡海鮮</b><span>拱天宮、老街午餐、動物互動、宵夜</span></div></a></li>
+    <li><a href="#d3"><span class="n">03</span><div><b>悠閒早餐 → 苑裡午餐 → 快樂返程</b><span>附近散步、紅芭樂創意料理</span></div></a></li>
+  </ol>
+  <div class="facts">
+    <div class="fact"><small>住宿</small><b>汐X光包棟民宿</b></div>
+    <div class="fact"><small>天數</small><b>三天兩夜</b></div>
+    <div class="fact"><small>晚餐</small><b>Day 1 火鍋 · Day 2 海鮮</b></div>
+    <div class="fact"><small>早餐</small><b>民宿自理(全聯買)</b></div>
+  </div>
+</section>
+
+<!-- ───── Day 1 ───── -->
+<section class="stage" id="d1">
+  <div class="stage-rule">
+    <span class="stage-no">01</span>
+    <div><div class="stage-day">DAY 1</div><h2>三義美食、伴手禮、民宿火鍋</h2></div>
+  </div>
+  <p class="theme">先吃一碗客家土雞麵,買好伴手禮和兩天份的食材,下午入住,<b>晚上在民宿圍爐煮火鍋</b>。</p>
+
+  <div class="period">上午至中午 · 前往三義</div>
+  <div class="slot">
+    <div class="t">11:30–12:30</div>
+    <div>
+      <h3>午餐:澎湃客家土雞麵</h3>
+      <p>抵達三義後先吃午餐,品嚐客家風味麵食,為三天兩夜的旅程揭開序幕。</p>
+      <div class="links"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E6%BE%8E%E6%B9%83%E5%AE%A2%E5%AE%B6%E5%9C%9F%E9%9B%9E%E9%BA%B5" target="_blank" rel="noopener">📍 地圖</a></div>
+    </div>
+  </div>
+
+  <div class="period">中午至下午 · 採買伴手禮與食材</div>
+  <div class="slot">
+    <div class="t">12:45–13:30</div>
+    <div>
+      <h3>垂坤食品 · 伴手禮</h3>
+      <p>肉乾、肉鬆、餅乾和其他特色零食,帶回家跟親友分享。</p>
+      <div class="links"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E5%9E%82%E5%9D%A4%E9%A3%9F%E5%93%81%20%E4%B8%89%E7%BE%A9" target="_blank" rel="noopener">📍 地圖</a></div>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="t">13:30–14:30</div>
+    <div>
+      <h3>全聯福利中心 · 火鍋和早餐食材</h3>
+      <p>一次買齊當天晚餐火鍋和隔天早餐。下面清單可以直接在手機上勾。</p>
+      <div class="links"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E5%85%A8%E8%81%AF%E7%A6%8F%E5%88%A9%E4%B8%AD%E5%BF%83%20%E4%B8%89%E7%BE%A9" target="_blank" rel="noopener">📍 附近全聯</a></div>
+    </div>
+  </div>
+
+  <div class="lists">
+    <div class="box">
+      <h4>🍲 火鍋食材</h4>
+      <ul class="check">
+        <li><input type="checkbox" id="h1"><label for="h1">火鍋肉片、火鍋料、丸子</label></li>
+        <li><input type="checkbox" id="h2"><label for="h2">高麗菜、青江菜、菇類、玉米</label></li>
+        <li><input type="checkbox" id="h3"><label for="h3">豆腐、豆皮、冬粉或麵條</label></li>
+        <li><input type="checkbox" id="h4"><label for="h4">火鍋湯底、沾醬、蔥、蒜</label></li>
+        <li><input type="checkbox" id="h5"><label for="h5">飲料、冰品</label></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h4>🍳 早餐食材</h4>
+      <ul class="check">
+        <li><input type="checkbox" id="e1"><label for="e1">吐司、雞蛋、火腿、起司</label></li>
+        <li><input type="checkbox" id="e2"><label for="e2">牛奶或豆漿</label></li>
+        <li><input type="checkbox" id="e3"><label for="e3">水果、優格</label></li>
+        <li><input type="checkbox" id="e4"><label for="e4">果醬、咖啡或茶</label></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="period">下午 · 入住</div>
+  <div class="slot">
+    <div class="t">15:00 之後</div>
+    <div>
+      <h3>入住汐X光包棟民宿</h3>
+      <p>辦理入住,整理行李,稍作休息。</p>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/hotpot.jpg" width="1400" height="1050" loading="lazy" alt="桌上擺著高麗菜、肉片和火鍋配菜">
+    <figcaption>火鍋示意 · 照片:御輿大命(CC0)</figcaption>
+  </figure>
+
+  <div class="period">晚上 · 民宿火鍋派對</div>
+  <div class="slot">
+    <div class="t">18:00–20:00</div>
+    <div>
+      <h3>民宿火鍋晚餐</h3>
+      <p>大家一起備料、煮火鍋,在包棟空間享受美食與團聚時光。</p>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="t">20:00 之後</div>
+    <div>
+      <h3>自由活動</h3>
+      <p>聊天、玩桌遊、看電影、吃零食,享受悠閒的民宿夜晚。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── Day 2 ───── -->
+<section class="stage" id="d2">
+  <div class="stage-rule">
+    <span class="stage-no">02</span>
+    <div><div class="stage-day">DAY 2</div><h2>白沙屯媽祖、老街美食、飛牛牧場</h2></div>
+  </div>
+  <p class="theme">早上參拜拱天宮、在老街吃午餐,下午到飛牛牧場看鴨 BB、餵小牛,<b>傍晚回苑裡吃海鮮</b>。</p>
+
+  <div class="period">早上 · 民宿早餐與白沙屯</div>
+  <div class="slot">
+    <div class="t">08:00–09:00</div>
+    <div>
+      <h3>民宿早餐</h3>
+      <p>吃前一天準備好的早餐,吃飽準備出發。</p>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="t">09:15–11:15</div>
+    <div>
+      <h3>白沙屯拱天宮參拜 · 周邊散步</h3>
+      <p>參拜媽祖,在廟宇周邊走走、拍照,感受在地信仰文化和悠閒氣氛。</p>
+      <div class="links"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BD%E6%B2%99%E5%B1%AF%E6%8B%B1%E5%A4%A9%E5%AE%AE" target="_blank" rel="noopener">📍 地圖</a></div>
+    </div>
+  </div>
+
+  <div class="pair">
+    <figure>
+      <img src="img/temple.jpg" width="1400" height="1158" loading="lazy" alt="白沙屯拱天宮正面">
+      <figcaption>拱天宮正面 · Outlookxp(CC BY-SA 4.0)</figcaption>
+    </figure>
+    <figure>
+      <img src="img/eaves.jpg" width="1400" height="1050" loading="lazy" alt="拱天宮屋簷下的彩繪與木雕">
+      <figcaption>廟簷彩繪 · 雲角(CC BY-SA 4.0)</figcaption>
+    </figure>
+  </div>
+
+  <div class="period">中午 · 白沙屯老街</div>
+  <div class="slot">
+    <div class="t">11:15–12:45</div>
+    <div>
+      <h3>白沙屯老街午餐</h3>
+      <p>在老街找喜歡的在地美食和小吃,飯後稍微逛逛,感受白沙屯的在地風情。</p>
+    </div>
+  </div>
+
+  <div class="period">下午 · 飛牛牧場</div>
+  <div class="slot">
+    <div class="t">13:15–16:30</div>
+    <div>
+      <h3>飛牛牧場 · 親子動物體驗</h3>
+      <p>苗栗縣通霄鎮南和里 166 號。入園後照活動時間參加動物互動:</p>
+      <ul class="sched">
+        <li><span class="h">13:15</span><span>抵達牧場、購票入園</span></li>
+        <li><span class="h">13:45</span><span>鴨 BB 大遊行</span></li>
+        <li><span class="h">14:15</span><span>牛媽媽擠牛奶教學體驗</span></li>
+        <li><span class="h">15:00</span><span>餵小牛喝奶</span></li>
+        <li><span class="h">16:00</span><span>假日加開鴨 BB 大遊行(看體力和時間)</span></li>
+        <li><span class="h">16:30</span><span>準備離開牧場</span></li>
+      </ul>
+      <p class="note">以上依目前公布的場次規劃,<b>實際時間、集合地點和名額以牧場當日公告為準</b>。餵小牛的奶量有限,建議提早到集合點。公布的營業時間為 08:00–19:00,門票和優惠可能調整,出發前再確認。</p>
+      <div class="links"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E9%A3%9B%E7%89%9B%E7%89%A7%E5%A0%B4" target="_blank" rel="noopener">📍 地圖</a><a class="lk" href="https://www.flyingcow.com.tw/" target="_blank" rel="noopener">官網</a></div>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/cow.jpg" width="1400" height="931" loading="lazy" alt="飛牛牧場草地上的紅白乳牛雕像與大樹">
+    <figcaption>飛牛牧場 · Taiwania Justo(CC BY-SA 4.0)</figcaption>
+  </figure>
+
+  <div class="period">傍晚 · 苑裡晚餐</div>
+  <div class="slot">
+    <div class="t">17:15–18:45</div>
+    <div>
+      <h3>討海人海鮮料理會館</h3>
+      <p>海鮮、熱炒這類適合多人分享的菜,一天行程結束後好好吃一頓。</p>
+      <p class="note"><b>出發前先確認</b>當日營業時間,以及是否需要訂位。</p>
+      <div class="links"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E8%A8%8E%E6%B5%B7%E4%BA%BA%E6%B5%B7%E9%AE%AE%E6%96%99%E7%90%86%E6%9C%83%E9%A4%A8" target="_blank" rel="noopener">📍 地圖</a></div>
+    </div>
+  </div>
+
+  <div class="period">晚上 · 宵夜回民宿</div>
+  <div class="slot">
+    <div class="t">19:00 之後</div>
+    <div>
+      <h3>買宵夜,回民宿</h3>
+      <p>鹽酥雞、炸物、滷味、雞排、飲料和零食,帶回民宿邊吃邊聊,享受旅行的第二個晚上。</p>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/snack.jpg" width="1400" height="933" loading="lazy" alt="夜晚亮著招牌的鹽酥雞攤">
+    <figcaption>宵夜示意 · 玄史生(CC0)</figcaption>
+  </figure>
+</section>
+
+<!-- ───── Day 3 ───── -->
+<section class="stage" id="d3">
+  <div class="stage-rule">
+    <span class="stage-no">03</span>
+    <div><div class="stage-day">DAY 3</div><h2>悠閒早餐、苑裡午餐、快樂返程</h2></div>
+  </div>
+  <p class="theme">不趕行程:吃早餐、收行李、附近散步,<b>午餐吃紅芭樂創意料理</b>再回家。</p>
+
+  <div class="period">早上 · 早餐與整理行李</div>
+  <div class="slot">
+    <div class="t">08:00–09:00</div>
+    <div>
+      <h3>民宿早餐</h3>
+      <p>吃早餐、整理行李,確認個人物品都收齊。</p>
+    </div>
+  </div>
+  <div class="slot">
+    <div class="t">09:30–11:00</div>
+    <div>
+      <h3>自由活動</h3>
+      <p>附近散步拍照,或在返程途中補買伴手禮。</p>
+    </div>
+  </div>
+
+  <figure>
+    <img src="img/coast.jpg" width="1400" height="1050" loading="lazy" alt="通霄新埔海岸的堤岸步道與海">
+    <figcaption>附近海岸線 · 通霄新埔海岸 · lienyuan lee(CC BY 3.0)</figcaption>
+  </figure>
+
+  <div class="period">中午 · 苑裡午餐</div>
+  <div class="slot">
+    <div class="t">11:30–13:00</div>
+    <div>
+      <h3>紅芭樂創意料理</h3>
+      <p>第三天午餐的首選,為旅程收一頓豐盛的尾。</p>
+      <p class="note"><b>Day 3 是週一</b>,務必先確認店家有沒有營業、要不要預約;遇到公休就改選苑裡當天有營業的餐廳。</p>
+      <div class="links"><a class="lk" href="https://www.google.com/maps/search/?api=1&query=%E7%B4%85%E8%8A%AD%E6%A8%82%E5%89%B5%E6%84%8F%E6%96%99%E7%90%86%20%E8%8B%91%E8%A3%A1" target="_blank" rel="noopener">📍 地圖</a></div>
+    </div>
+  </div>
+
+  <figure class="tall">
+    <img src="img/guava.jpg" width="1400" height="1050" loading="lazy" alt="竹籃裡的紅心芭樂,剖開可見粉紅果肉">
+    <figcaption>紅心芭樂示意 · Olaf8940(CC BY-SA 4.0)</figcaption>
+  </figure>
+
+  <div class="period">下午 · 返程</div>
+  <div class="slot">
+    <div class="t">13:00 之後</div>
+    <div>
+      <h3>快樂返程</h3>
+      <p>帶著滿滿的美食回憶、伴手禮和照片,開心回家。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── 行前清單 ───── -->
+<section class="prep" id="prep">
+  <h2>行前準備清單</h2>
+  <div class="box">
+    <ul class="check">
+      <li><input type="checkbox" id="p1"><label for="p1">確認汐X光包棟民宿的入住與退房時間</label></li>
+      <li><input type="checkbox" id="p2"><label for="p2">確認民宿有沒有鍋具、餐具、冰箱和基本調味料</label></li>
+      <li><input type="checkbox" id="p3"><label for="p3">準備火鍋與早餐食材採買清單(見 <a href="#d1">Day 1</a>)</label></li>
+      <li><input type="checkbox" id="p4"><label for="p4">確認飛牛牧場營業時間、門票和動物互動場次</label></li>
+      <li><input type="checkbox" id="p5"><label for="p5">確認 Day 2 晚餐店家營業時間,需要就訂位</label></li>
+      <li><input type="checkbox" id="p6"><label for="p6">確認 Day 3 午餐店家週一有沒有營業</label></li>
+      <li><input type="checkbox" id="p7"><label for="p7">充電器、行動電源、個人用品、雨具</label></li>
+      <li><input type="checkbox" id="p8"><label for="p8">出發前看天氣和交通路況</label></li>
+    </ul>
+  </div>
+  <button class="reset" id="reset" type="button">清除所有勾選</button>
+  <p style="font-size:.76rem;color:var(--ink-3);margin-top:8px">勾選狀態只存在這支手機的瀏覽器裡。</p>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="bye">祝大家旅途愉快,吃得滿足、玩得開心,<br>在汐X光留下美好的三天兩夜回憶!</p>
+    <div class="credits">
+      照片來自 Wikimedia Commons,依各授權標示:<br>
+      <a href="https://commons.wikimedia.org/wiki/File:%E7%99%BD%E6%B2%99%E5%B1%AF%E6%8B%B1%E5%A4%A9%E5%AE%AE%E6%AD%A3%E9%9D%A2%E7%85%A7.jpg" target="_blank" rel="noopener">白沙屯拱天宮正面照</a> — Outlookxp, CC BY-SA 4.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:%E7%99%BD%E6%B2%99%E5%B1%AF%EF%BD%9C%E6%8B%B1%E5%A4%A9%E5%AE%AE_%E5%BB%9F%E7%B0%B7%E5%BD%A9%E7%B9%AA.jpg" target="_blank" rel="noopener">拱天宮 廟簷彩繪</a> — 雲角, CC BY-SA 4.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Cow_Statues_in_Flying_Cow_Ranch.JPG" target="_blank" rel="noopener">Cow Statues in Flying Cow Ranch</a> — Taiwania Justo, CC BY-SA 4.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Taiwanese_hot-pot.jpg" target="_blank" rel="noopener">Taiwanese hot-pot</a> — 御輿大命, CC0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Taiwan_Fried_Chicken_Booth_in_Xinzhong_Market_20141218.jpg" target="_blank" rel="noopener">Taiwan Fried Chicken Booth</a> — 玄史生, CC0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:%E6%96%B0%E5%9F%94%E6%B5%B7%E5%B2%B8_Xinpu_Coast_-_panoramio.jpg" target="_blank" rel="noopener">新埔海岸 Xinpu Coast</a> — lienyuan lee, CC BY 3.0 ·
+      <a href="https://commons.wikimedia.org/wiki/File:Red_Diamond_guava_fruit.jpg" target="_blank" rel="noopener">Red Diamond guava fruit</a> — Olaf8940, CC BY-SA 4.0<br>
+      照片經縮圖壓縮,未做其他修改。店家營業時間與活動場次以官方公告為準。
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  // scrollspy for the pill nav
+  var links = Array.prototype.slice.call(document.querySelectorAll('#nav a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var cur = -1;
+  function spy(){
+    var y = window.scrollY + 90, on = -1;
+    for (var i = 0; i < secs.length; i++) if (secs[i] && secs[i].offsetTop <= y) on = i;
+    if (on !== cur) {
+      cur = on;
+      links.forEach(function(a, i){ a.classList.toggle('on', i === on); });
+      if (on >= 0) { try { links[on].scrollIntoView({block:'nearest', inline:'nearest', behavior:'instant'}); } catch (e) {} }
+    }
+  }
+  window.addEventListener('scroll', spy, {passive:true}); spy();
+
+  // checklists persist on this device only
+  var KEY = 'miaoli-trip-check', saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { saved = {}; }
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.check input[type=checkbox]'));
+  boxes.forEach(function(b){
+    if (saved[b.id]) b.checked = true;
+    b.addEventListener('change', function(){
+      saved[b.id] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+    });
+  });
+  document.getElementById('reset').addEventListener('click', function(){
+    saved = {}; boxes.forEach(function(b){ b.checked = false; });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
